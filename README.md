@@ -31,3 +31,10 @@ Un fichier `perspective-studio-modele` contient : `pieces` (genre `boite`, `cyli
 ## Limites
 
 Pas de transparence ni de dégradés, pas de formes courbes libres (cylindres et prismes convexes seulement), pas de déclenchement au scroll ou au clic dans la page exportée. Testé dans Chromium ; Safari, Firefox et téléphones réels ne sont pas vérifiés.
+
+## Licences
+
+- **Code** (`crates/`, `web/`, `serve.py`, `build.sh`) : MIT, voir `LICENSE`.
+- **Modèles** (`web/modeles/`) **et documentation** : CC BY 4.0, voir `LICENSE-CONTENU.md`.
+
+Les illustrations et les modèles de démonstration sont originaux et ne reproduisent aucun produit ni aucune marque. Si vous créez un modèle d'après un objet réel, évitez de reprendre ses tracés, son nom ou son logo.
