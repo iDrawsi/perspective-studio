@@ -1,0 +1,10 @@
+[package]
+name = "perspective_core"
+version = "0.0.1"
+edition = "2024"
+description = "Moteur de perspective : aucune dépendance externe."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
