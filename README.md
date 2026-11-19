@@ -2,6 +2,10 @@
 
 Outil local pour fabriquer des illustrations vectorielles animées, en traits seuls (contours clairs sur fond sombre, une teinte pour ce qui bouge), à partir d'un modèle 3D simple. Caméra, focale en mm et zoom réglables ; pièces mobiles pilotées par des curseurs ou par une démonstration en boucle ; export en page HTML autonome, en SVG ou en JSON.
 
+## Usage premier : de l'image à l'illustration, avec une IA
+
+On donne à un assistant IA (testé avec Claude Code) des **images de référence**, une **description** et le **comportement** voulu. L'IA pose ses questions (rendu, vue, zoom, animation, sortie), puis **écrit un modèle** (fichier JSON) que le moteur dessine, anime et exporte. Le moteur ne reconstruit pas l'objet depuis la photo : c'est l'IA qui le décrit avec des formes simples, donc le résultat est stylisé et approximatif. Voir `docs/WORKFLOW-IA.md` (le briefing à suivre) et `docs/FORMAT-MODELE.md` (le format que l'IA écrit). Le fichier `CLAUDE.md` demande à Claude Code de suivre ce workflow.
+
 Le moteur est écrit en Rust et compilé en WebAssembly. **Aucune dépendance externe** (ni crate, ni bibliothèque JavaScript), aucun réseau à l'exécution.
 
 ## Lancer
@@ -26,7 +30,7 @@ Un fichier `perspective-studio-modele` contient : `pieces` (genre `boite`, `cyli
 
 - `crates/core` : le moteur (caméra, pièces, arbre BSP pour un ordre d'affichage exact, rendu SVG) et ses tests (`cargo test`).
 - `web/` : interface (`index.html`, `editeur.html`), lecteur de modèle (`modele.js`), liaison WebAssembly (`glue.js`), exports (`export.js`).
-- `docs/EDITEUR.md` : fonctionnement de l'éditeur et de l'ordre d'affichage. `docs/SECURITE.md` : choix de sécurité.
+- `docs/WORKFLOW-IA.md` : briefing et vérifications pour une IA. `docs/FORMAT-MODELE.md` : format du modèle. `docs/EDITEUR.md` : éditeur et ordre d'affichage. `docs/SECURITE.md` : choix de sécurité.
 
 ## Limites
 
